@@ -5,6 +5,7 @@ import AccordionDetails from "@material-ui/core/ExpansionPanelDetails";
 import AccordionSummary from "@material-ui/core/ExpansionPanelSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import payeeData from '../../payeeData.json';
 // import TableHead from "@material-ui/core/TableHead";
 // import { TableRow } from "@material-ui/core";
 import styles from "assets/jss/material-dashboard-react/components/tableStyle.js";
@@ -101,12 +102,13 @@ export default function Accordian(props) {
   };
 
   React.useEffect(() => {
-    fetch(apiURL)
-      .then((res) => {
-        return res.json();
-      })
-      .catch((err) => console.log(err, "this is err"))
-      .then((res) => setCustomerList(res));
+    setCustomerList(payeeData)
+    // fetch(apiURL)
+    //   .then((res) => {
+    //     return res.json();
+    //   })
+    //   .catch((err) => console.log(err, "this is err"))
+    //   .then((res) => setCustomerList(res));
   }, [customerList]);
 
   return (
