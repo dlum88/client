@@ -22,6 +22,7 @@ let ps;
 const switchRoutes = (
   <Switch>
     {routes.map((prop, key) => {
+      console.log(prop, 'THIS IS PROP???')
       if (prop.layout === "/admin") {
         return (
           <Route
@@ -66,6 +67,7 @@ export default function Admin({ ...rest }) {
     setMobileOpen(!mobileOpen);
   };
   const getRoute = () => {
+    console.log('when do i click??')
     return window.location.pathname !== "/admin/maps";
   };
   const resizeFunction = () => {
